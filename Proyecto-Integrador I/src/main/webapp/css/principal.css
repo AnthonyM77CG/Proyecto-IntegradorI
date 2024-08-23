@@ -1,0 +1,259 @@
+
+/* FALTA ORDENAR CSS POR CLASES*/
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+.banner {
+    background: rgba(34, 34, 34, 0.3);
+    padding: 14px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+}
+
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav li {
+    display: flex;
+    align-items: center;
+    margin: 0 7px;
+}
+
+.nav li a {
+    color: #c0c0c0;
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.nav li a::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #ff8080;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    z-index: -1;
+}
+
+.nav li a:hover::after {
+    bottom: -15px;
+    opacity: 1;
+}
+
+.nav .icon-link img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%) brightness(100%) grayscale(100%);
+    transition: opacity 0.3s;
+    margin-right: 8px;
+}
+
+.nav .icon-link img:hover {
+    opacity: 0.8;
+}
+
+.container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.hero {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-images {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.carousel-images > div {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.carousel .slide-content {
+    position: absolute;
+    bottom: 50px;
+    left: 120px;
+    color: white;
+    text-align: left;
+    padding: 110px;
+    border-radius: 15px;
+    max-width: 45%;
+    z-index: 10;
+    transition: all 0.3s ease-in-out;
+}
+
+.carousel .slide-content h2 {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-weight: 950;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.carousel .slide-content p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: white;
+    line-height: 1.6;
+}
+
+.carousel .slide-content a {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #ff6b6b, #ff4757);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0px 3px 10px rgba(255, 75, 75, 0.5);
+    transition: background 0.3s, transform 0.3s;
+}
+
+.carousel .slide-content a:hover {
+    background: linear-gradient(135deg, #ff4757, #ff6b6b);
+    transform: translateY(-3px);
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px;
+}
+
+.section {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.section-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.section-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.section h2 {
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.section p {
+    text-align: justify;
+}
+
+.section ul {
+    list-style-type: square;
+    padding-left: 20px;
+    text-align: left;
+    margin-top: 0;
+}
+
+.mision, .vision, .objetivos, .valores {
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.mision .section-img, .objetivos .section-img {
+    margin-right: 20px;
+}
+
+.vision .section-img, .valores .section-img {
+    margin-left: 20px;
+    order: 2;
+}
