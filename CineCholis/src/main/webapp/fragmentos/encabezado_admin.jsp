@@ -6,8 +6,9 @@
         <li><a href="#">Mantenimiento Peliculas</a></li>
         <li><a href="#">Mantenimiento Ciudades</a></li>
         <li><a href="#">Mantenimiento Cines</a></li>
-        
-        <li><a href="#" class="icon-link"><img src="img/iconCliente.png" alt="Contactanos" class="nav-icon" /></a></li>
+       <li><a href="cartelera.jsp" class="icon-link"><img src="img/salida.png" alt="Salir" class="nav-icon" /></a></li>
+
+       
         
     </ul>
 </div>

@@ -19,7 +19,7 @@
 
         if (registrado) {
             // Usuario registrado exitosamente
-            out.println("<script>alert('Usuario registrado exitosamente.'); window.location='login.jsp';</script>");
+            out.println("<script>alert('Usuario registrado exitosamente.'); window.location='loginusuario.jsp';</script>");
         } else {
             // Hubo un error al registrar el usuario
             out.println("<script>alert('Error al registrar el usuario. Intenta nuevamente.'); window.location='registro.jsp';</script>");

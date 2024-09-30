@@ -13,7 +13,7 @@
 
         if (rol != null) {
             if (rol.equals("administrador")) {
-                response.sendRedirect("intranet_admin.jsp");
+                response.sendRedirect("crudPeliculas.jsp");
                 return;
             } else if (rol.equals("usuario")) {
                 response.sendRedirect("cartelera.jsp");

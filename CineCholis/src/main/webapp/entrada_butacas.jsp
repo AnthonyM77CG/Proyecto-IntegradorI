@@ -21,14 +21,14 @@
     }
 
     // Obtener detalles de la sesión o parámetros de la solicitud
-    String pelicula = (String) session.getAttribute("pelicula");
-    String fecha = (String) session.getAttribute("fecha");
-    String horario = (String) session.getAttribute("horario");
-    String cine = (String) session.getAttribute("cine");
+     String pelicula = request.getParameter("pelicula");
+     String fecha = request.getParameter("fecha");
+     String horario = request.getParameter("horario");
+     String cine = request.getParameter("cine");
     String asientos = request.getParameter("asientos");
     String imagen = request.getParameter("imagen"); 
     String salaIdStr = request.getParameter("sala");
-
+    
     // Validar y convertir el número de asientos
     String numAsientosParam = request.getParameter("numAsientos");
     Integer numAsientos = 0; // Inicializa el valor por defecto

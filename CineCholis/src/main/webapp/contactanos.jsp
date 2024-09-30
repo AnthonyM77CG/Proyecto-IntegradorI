@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -88,7 +88,7 @@
             
             <div class="fila-contacto">
                 <button type="submit">Enviar</button>
-                <input type="hidden" name="_next" value="http://localhost:8015/part1/contactanos.jsp">
+                
             </div>
         </form>
     </div>
