@@ -1,0 +1,347 @@
+@charset "UTF-8";
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+.banner-dulceria {
+    background: rgba(0, 50, 120, 9); 
+    padding: 14px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10; 
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+}
+
+.banner-dulceria.white-background {
+    background: rgba(255, 255, 255, 0);
+    border-bottom: 1px solid #ccc;
+}
+
+.banner-dulceria.white-background .navdulc li a {
+    color: #000;
+}
+
+.banner-dulceria.white-background .navdulc .icon-link img {
+    filter: invert(0%) brightness(100%) grayscale(0%);
+}
+
+
+.navdulc {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navdulc li {
+    display: flex;
+    align-items: center;
+    margin: 0 7px;
+}
+
+.navdulc li a {
+    color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.navdulc li a::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #ff8080;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    z-index: -1;
+}
+
+.navdulc li a:hover::after {
+    bottom: -15px;
+    opacity: 1;
+}
+
+
+.navdulc .icon-link {
+    margin-right: 420px;
+    margin-left: 420px;  
+}
+
+.navdulc .icon-link img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%) brightness(100%) grayscale(100%);
+    transition: opacity 0.3s;
+    margin-right: 8px;
+}
+
+.navdulc .icon-link img:hover {
+    opacity: 0.8;
+}
+
+/*BANER DE DULCERI PRODUCTOS*/
+.banner-dulceria-productos {
+    background: rgba(0, 50, 120, 9);
+    padding: 14px 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    margin-top: 72px; 
+    z-index: 9;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.banner-dulceria-productos .nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-dulceria-productos .nav li {
+    margin: 0 7px;
+}
+
+.banner-dulceria-productos .nav li img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%) brightness(100%) grayscale(100%);
+}
+
+.banner-dulceria-productos .nav li img:hover {
+    opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+.main-content-butacas {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    background-color: white;
+    margin-left: 170px; 
+}
+
+
+.left-panel-butacas {
+    width: 30%; 
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+.left-panel-butacas img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.left-panel-butacas h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.left-panel-butacas p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+
+.right-panel-butacas {
+    width: 65%;
+    padding: 20px;
+    background-color: #fff;
+    border-left: 2px solid #c0c0c0; 
+    position: relative; 
+    left: 10px; 
+}
+
+
+.screen-label {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.seating-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.row-label {
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+
+.seat {
+    width: 25px;
+    height: 25px;
+    background-color: #00cc66;
+    margin: 5px;
+    border-radius: 50%; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative; 
+}
+
+.seat.available:hover {
+    background-color: #00994d;
+}
+
+.seat.taken {
+    background-color: #ff4d4d;
+    cursor: not-allowed;
+}
+
+.seat.selected {
+    background-color: #3333ff;
+}
+
+
+.seat[data-seat-number]:hover::after {
+    content: attr(data-seat-number);
+    position: absolute;
+    background-color: #222;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    top: -30px;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+
+.seating-info {
+    display: flex; 
+    align-items: center;
+    margin: 20px 0;
+    justify-content: center; 
+}
+
+.seating-info span {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; 
+}
+
+.seating-info .seat {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+.seat.available {
+    background-color: #00cc66;
+}
+
+.seat.occupied {
+    background-color: #ff4d4d;
+}
+
+.seat.selected {
+    background-color: #3333ff;
+}
+
+
+.selected-seats {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.button-continue {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #3333ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.button-continue:hover {
+    background-color: #6666ff;
+}
+
+
+@media (min-width: 768px) {
+    .left-panel-butacas, .right-panel-butacas {
+        margin-top: 0;
+    }
+
+    .main-content-butacas {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-content-butacas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-panel-butacas, .right-panel-butacas {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+

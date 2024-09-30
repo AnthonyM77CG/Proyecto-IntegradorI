@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background-image: url('../img/imaregi.jpg'); /* Ruta a tu imagen */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0); /* Fondo completamente transparente */
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+}
+
+h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 35px; /* Tamaño base */
+}
+
+p {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex-basis: 48%;
+    text-align: left;
+    position: relative;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="password_confirm"] {
+    width: 100%;
+    padding: 6px;
+    border: none;
+    border-bottom: 1px solid #c0c0c0;
+    font-size: 17px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0); /* Fondo transparente para los campos de entrada */
+    color: #ffffff; /* Color del texto */
+    caret-color: #ffffff; /* Color del cursor */
+}
+
+.form-group input::placeholder {
+    color: #ffffff; /* Color del texto del placeholder */
+    opacity: 1; /* Asegura que el texto del placeholder sea completamente visible */
+}
+
+.form-group-center {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.form-group-center input[type="password"] {
+    width: 50%;
+    padding: 5px;
+    font-size: 17px;
+    text-indent: 37px; /* Ajusta este valor para mover el texto placeholder a la derecha */
+}
+
+.form-group.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: -25px;
+    margin-top: 40px;
+}
+
+.form-group.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.form-group label {
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.form-group label a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.form-group label a:hover {
+    text-decoration: underline;
+}
+
+.submit-btn {
+    background-color: #d40000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 55px;
+}
+
+.submit-btn:hover {
+    background-color: #b00000;
+}
+.form-row {
+    display: flex;
+    align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex: 1; /* Permite que el campo de entrada ocupe el espacio disponible */
+    text-align: left;
+    position: relative;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="password_confirm"] {
+    width: 100%;
+    padding: 6px; /* Reduce el padding si es necesario */
+    border: none;
+    border-bottom: 1px solid #c0c0c0;
+    font-size: 17px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0); /* Fondo transparente para los campos de entrada */
+    color: #ffffff; /* Color del texto */
+    caret-color: #ffffff; /* Color del cursor */
+}
+
+.form-group button {
+    padding: 9px 0; /* Espaciado del botón */
+    font-size: 17px;
+    margin-top: 2px; /* Ajusta este valor según necesites */
+    width: 100px; /* Cambia este valor para ajustar el ancho del botón */
+    margin-left: 10px;
+}
