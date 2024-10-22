@@ -4,7 +4,7 @@
     <ul class="nav">
         <li><a href="cartelera.jsp">Cartelera</a></li>
         <li><a href="#">Cines</a></li>
-        <li><a href="#">Promociones</a></li>
+        <li><a href="promociones.jsp">Promociones</a></li>
         <li><a href="#">Socio</a></li>
         
         <li><a href="#">Corporativo</a></li>
