@@ -1,0 +1,102 @@
+@charset "UTF-8";
+body {
+    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+    color: #ffff; /* Fondo celeste suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.success-container {
+    text-align: center;
+    background: transparent; /* Fondo transparente */
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    animation: pop-up 1s ease-out forwards;
+}
+
+@keyframes pop-up {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.check-icon img {
+    width: 80px;
+    height: 80px;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+h1 {
+    color: #4caf50;
+    font-size: 2.5em;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+p {
+    color: #555;
+    font-size: 1.2em;
+    margin-top: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Botón para ver comprobante */
+.btn-comprobante {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.btn-comprobante:hover {
+    background-color: #388e3c;
+}
+

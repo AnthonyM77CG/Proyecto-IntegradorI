@@ -1,0 +1,477 @@
+/* Contenedor principal de la pasarela de pago */
+/* Contenedor principal de la pasarela de pago */
+.payment-panel {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+    margin-left: 90px; /* Ajusta el margen para asegurar que haya suficiente espacio a la izquierda */
+    border-left: 1px solid #c0c0c0; /* Línea divisoria en color gris claro */
+    padding-left: 75px; /* Aumenta el espacio adicional para separar más el contenido de la línea divisoria */
+     margin-top: -25px;
+}
+
+
+/* Importar la fuente "Poppins" */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+.payment-panel h2 {
+    font-size: 26px;  /* Tamaño ligeramente más grande */
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: -35px;
+    font-family: 'Poppins', sans-serif; /* Aplicar la fuente "Poppins" */
+    font-weight: 600;  /* Grosor más marcado */
+    letter-spacing: 1px;  /* Espaciado entre letras para mayor claridad */
+}
+
+
+.payment-icons {
+    margin-bottom: 20px;
+}
+
+.payment-icons img {
+    width: 50px;
+    margin: 0 10px;
+}
+
+/* Contenedor para los inputs de fecha de vencimiento y CVV */
+.flex-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.flex-group input {
+    flex: 1;
+    width: 48%; /* Ajusta el tamaño de los inputs para alinearlos */
+}
+
+/* Estilos para los campos de entrada */
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #333;
+    padding: 10px 5px;
+    font-size: 18px;
+    color: #333;
+    background-color: transparent;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input::placeholder {
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.form-group input:focus::placeholder {
+    color: transparent;
+}
+
+.form-group input:focus {
+    border-color: #e74c3c;
+}
+
+/* Contenedor para términos y total */
+.terms-total-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 45px;
+}
+
+/* Alineación del texto y estilo del checkbox */
+.terms-and-conditions {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+    
+}
+
+.terms-and-conditions input {
+    margin-right: 10px;
+    transform: scale(1.5);
+}
+
+/* Estilo para la cantidad total */
+/* Estilo para la cantidad total */
+.total-amount {
+    font-size: 20px;           /* Aumentar el tamaño de la fuente */
+    font-weight: bold;         /* Hacer el texto más grueso */
+    color: #333;               /* Color negro para "TOTAL" */
+}
+
+.total-amount span {          /* Estilo para el monto en rojo */
+    color: #e74c3c;            /* Color rojo para el monto */
+    font-weight: 700;          /* Aumentar grosor del monto */
+    font-size: 30px;           /* Tamaño un poco más grande que el texto */
+}
+
+
+/* Estilos para el botón de pago */
+.cart-button {
+    text-align: center;
+}
+
+.cart-button button {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart-button button:hover {
+    background-color: #c0392b;
+}
+
+/* Estilo para el mensaje final */
+.payment-panel p {
+    font-size: 14px;
+    color: #333;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+.banner-dulceria {
+    background: rgba(0, 50, 120, 9); /* Azul oscuro cian con opacidad ajustada */
+    padding: 14px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10; 
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+}
+
+.banner-dulceria.white-background {
+    background: rgba(255, 255, 255, 0);
+    border-bottom: 1px solid #ccc;
+}
+
+.banner-dulceria.white-background .navdulc li a {
+    color: #000;
+}
+
+.banner-dulceria.white-background .navdulc .icon-link img {
+    filter: invert(0%) brightness(100%) grayscale(0%);
+}
+
+/* Menú de la dulcería */
+.navdulc {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navdulc li {
+    display: flex;
+    align-items: center;
+    margin: 0 7px;
+}
+
+.navdulc li a {
+    color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.navdulc li a::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #ff8080;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    z-index: -1;
+}
+
+.navdulc li a:hover::after {
+    bottom: -15px;
+    opacity: 1;
+}
+
+/* Iconos - Aumentar la separación */
+.navdulc .icon-link {
+    margin-right: 420px; /* Aumenta el margen derecho para alejarlo del centro */
+    margin-left: 420px;  /* Aumenta el margen izquierdo para alinearlo mejor */
+}
+
+.navdulc .icon-link img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%) brightness(100%) grayscale(100%);
+    transition: opacity 0.3s;
+    margin-right: 8px;
+}
+
+.navdulc .icon-link img:hover {
+    opacity: 0.8;
+}
+
+/* Banner de productos de la dulcería */
+.banner-dulceria-productos {
+    background: rgba(0, 50, 120, 9);
+    padding: 14px 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    margin-top: 72px; /* Ajustar según la altura del banner superior */
+    z-index: 9;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Menú de productos */
+.banner-dulceria-productos .nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-dulceria-productos .nav li {
+    margin: 0 7px;
+}
+
+.banner-dulceria-productos .nav li img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%) brightness(100%) grayscale(100%);
+}
+
+.banner-dulceria-productos .nav li img:hover {
+    opacity: 0.8;
+}
+
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+/* Contenedor principal */
+.main-content-productos {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 60px auto 0;
+    max-width: 1200px;
+    background-color: white;
+    margin-left: 170px;
+}
+
+/* Estilos para el panel izquierdo */
+.left-panel-productos {
+    width: 20%;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-right: 20px;
+    position: relative;
+    left: 40px;
+    margin-top:-45px;
+}
+
+.left-panel-productos img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.left-panel-productos h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.left-panel-productos p {
+    font-size: 16px;
+    margin: 5px 0;
+    margin-left: 13.5px;
+}
+
+
+
+
+
+
+
+.combo-list {
+    margin-top: 10px;
+    margin-left: -60px;
+    /* Ajusta el ancho si es necesario */
+}
+
+.combo-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espacia los elementos al inicio y al final del contenedor */
+    margin-top: 10px; /* Espacio entre cada combo */
+    
+}
+
+.combo-name {
+    flex: 1; /* Ocupa el espacio disponible */
+    margin: 0;
+    text-align: center; /* Centra el texto dentro del contenedor */
+    
+    overflow: hidden; /* Oculta el desbordamiento de texto */
+    text-overflow: clip; /* Quita los puntos suspensivos si el texto se desborda */
+}
+
+.combo-price {
+    flex-shrink: 0; /* No se encoge */
+    margin: 0;
+}
+
+.combo-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    margin-top: 22px;
+        margin-left: 22px;
+}
+
+.combo-button img {
+    width: 24px; /* Ajusta el tamaño del icono si es necesario */
+    height: auto;
+}
+/* Estilo para el botón de pagar con tarjeta */
+.btn-pagar {
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+    margin-left: 130px; /* Ajusta este valor para mover el botón más a la derecha */
+    
+    
+}
+
+.btn-pagar-targeta {
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+    margin-left: 60px; /* Ajusta este valor para mover el botón más a la derecha */
+}
+
+
+/* Estilo para el botón de Yape */
+.btn-yape {
+    background-color: #28a745; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+    position: absolute; /* O puedes usar fixed */
+    bottom: 20px; /* Ajusta la posición en el eje vertical */
+    left: 230px; /* Ajusta la posición en el eje horizontal */
+}
+
+/* Efecto al pasar el ratón sobre los botones */
+.btn-pagar:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el ratón */
+}
+.payment-panel {
+    position: relative; /* Asegúrate de que los elementos dentro de este contenedor se posicionen de manera relativa */
+}
+
+.btn-yape:hover {
+    background-color: #218838; /* Color de fondo al pasar el ratón */
+}
+
+/* Estilo adicional para los botones (opcional) */
+
+/* Estilo para el botón de confirmar pago */
+.btn-confirmar {
+    background-color: #ffc107; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+}
+
+/* Efecto al pasar el ratón sobre el botón de confirmar pago */
+.btn-confirmar:hover {
+    background-color: #e0a800; /* Color de fondo al pasar el ratón */
+}
+
+/* Estilo adicional para los botones (opcional) */
+button {
+    margin: 10px 0; /* Margen entre los botones */
+}
+.qr-code {
+    width: 150px; /* Ajusta el tamaño de la imagen aquí */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin: 10px 0; /* Margen superior e inferior para espaciar con el contenido */
+}
+
+.fade {
+    transition: opacity 0.5s ease;
+}
+

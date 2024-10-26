@@ -1,0 +1,338 @@
+.main-content-butacas-entradas {
+    display: flex;
+    padding: 20px;
+    margin-top: 180px;
+    margin-left: 55px;
+    
+}
+
+.right-panel-entradas {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    max-width: 700px;
+    text-align: center;
+    margin-top: -50px;
+    margin-left: 50px; /* Ajusta el margen izquierdo para mover el panel hacia la izquierda */
+}
+
+
+.right-panel-entradas h2 {
+    color: #003366;
+    margin-bottom: 15px;
+    text-align: left;
+    margin-left: 0; 
+}
+
+.right-panel-entradas p {
+    color: #555;
+    margin-bottom: 20px;
+    text-align: left; /* Alinea el texto a la izquierda */
+    margin-left: 0;   /* Elimina cualquier margen izquierdo para que esté pegado a la izquierda */
+}
+
+
+.entradas-generales {
+    margin-bottom: 20px;
+}
+
+.entrada-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.entrada-item label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #003366;
+    flex: 2;
+    text-align: left;
+}
+
+.entrada-item span {
+    font-size: 14px;
+    color: #888;
+    margin-right: 10px;
+    flex: 2;
+    text-align: left;
+}
+
+.entrada-item strong {
+    font-size: 16px;
+    color: #003366;
+    flex: 1;
+    text-align: right;
+    margin-right: 20px; /* Añade espacio a la derecha del precio */
+}
+
+.cantidad-selector {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: 30px; /* Añade margen a la izquierda para separar el selector del precio */
+}
+
+.cantidad-selector button {
+    background-color: #008080;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cantidad-selector input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+}
+
+.codigo-promocional {
+    margin-top: 30px;
+    display: flex;
+    align-items: center; /* Alinea verticalmente el cuadro de código promocional y el botón */
+    gap: 20px; /* Añade espacio entre el cuadro y el botón */
+}
+
+.codigo-promocional input {
+    flex: 1; /* Permite que el cuadro de código promocional ocupe el espacio restante disponible */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+.codigo-promocional label {
+    margin-top: 7px;
+}
+
+.codigo-promocional .btn-canjear {
+    padding: 10px 20px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    flex-shrink: 0; /* Evita que el botón se reduzca de tamaño */
+    margin-top: 8px;
+}
+
+
+.entradas-seleccionadas {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.entradas-seleccionadas p {
+    font-size: 16px;
+    color: #333;
+    flex: 2;
+    text-align: left;
+}
+
+.entradas-seleccionadas .btn-continuar {
+    padding: 10px 20px; /* Reduce el padding para hacer el botón más pequeño */
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto; /* Ajusta el ancho del botón al contenido */
+    text-align: center; /* Centra el texto dentro del botón */
+    flex-shrink: 0; /* Evita que el botón se reduzca de tamaño */
+}
+
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+.banner-dulceria {
+    background: rgba(0, 50, 120, 9); /* Azul oscuro cian con opacidad ajustada */
+    padding: 14px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10; 
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+}
+
+.banner-dulceria.white-background {
+    background: rgba(255, 255, 255, 0);
+    border-bottom: 1px solid #ccc;
+}
+
+.banner-dulceria.white-background .navdulc li a {
+    color: #000;
+}
+
+.banner-dulceria.white-background .navdulc .icon-link img {
+    filter: invert(0%) brightness(100%) grayscale(0%);
+}
+
+/* Menú de la dulcería */
+.navdulc {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navdulc li {
+    display: flex;
+    align-items: center;
+    margin: 0 7px;
+}
+
+.navdulc li a {
+    color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.navdulc li a::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #ff8080;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    z-index: -1;
+}
+
+.navdulc li a:hover::after {
+    bottom: -15px;
+    opacity: 1;
+}
+
+/* Iconos - Aumentar la separación */
+.navdulc .icon-link {
+    margin-right: 420px; /* Aumenta el margen derecho para alejarlo del centro */
+    margin-left: 420px;  /* Aumenta el margen izquierdo para alinearlo mejor */
+}
+
+.navdulc .icon-link img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%) brightness(100%) grayscale(100%);
+    transition: opacity 0.3s;
+    margin-right: 8px;
+}
+
+.navdulc .icon-link img:hover {
+    opacity: 0.8;
+}
+
+/* Banner de productos de la dulcería */
+.banner-dulceria-productos {
+    background: rgba(0, 50, 120, 9);
+    padding: 14px 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    margin-top: 72px; /* Ajustar según la altura del banner superior */
+    z-index: 9;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Menú de productos */
+.banner-dulceria-productos .nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-dulceria-productos .nav li {
+    margin: 0 7px;
+}
+
+.banner-dulceria-productos .nav li img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%) brightness(100%) grayscale(100%);
+}
+
+.banner-dulceria-productos .nav li img:hover {
+    opacity: 0.8;
+}
+
+
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+/* Contenedor principal */
+.main-content-butacas-entradas {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 60px auto 0;
+    max-width: 1200px;
+    background-color: white;
+    margin-left: 170px;
+}
+
+/* Estilos para el panel izquierdo */
+.left-panel-butacas {
+    width: 20%;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-right: 20px;
+    position: relative;
+    left: 40px;
+    margin-top:-45px;
+}
+
+.left-panel-butacas img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.left-panel-butacas h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.left-panel-butacas p {
+    font-size: 16px;
+    margin: 5px 0;
+    margin-left: 13.5px;
+}

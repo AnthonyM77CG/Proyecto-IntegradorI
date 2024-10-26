@@ -1,0 +1,164 @@
+
+
+.error-message {
+    
+            color: red;
+            border: 1px solid red;
+            background-color: #ffe6e6;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: center;
+            border-radius: 5px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+}
+    
+
+
+.conteiner-login {
+    height: 100vh; /* Hace que el contenedor ocupe el 100% de la altura de la pantalla */
+    margin: 0;
+    padding: 0;
+    background: url('../img/nebulosaregi.jpg') no-repeat center center fixed; /* La imagen de fondo estará centrada y fija */
+    background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+    background-origin: content-box;
+}
+
+
+
+.form-login {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    color: #ffffff;
+}
+.form-login input[type="text"],
+.form-login input[type="password"]{
+
+
+    color: white;
+    background-color: #333646;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #908a8a;
+    margin-bottom: 15px;
+    border-radius: 0;
+}
+
+
+fieldset,
+legend {
+    border: none;
+    border-radius: 15px;
+    padding: 0.6rem 1rem;
+    margin: 1rem 0;
+    background: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h3 {
+    margin-bottom: 50px;
+    font-size: 35px;
+    text-align: center;
+
+}
+
+fieldset h3{
+    color: #ffffff;
+}
+
+.conteiner,
+.register,
+.remember-me,
+.boton_ingreso {
+    margin: 1.2rem;
+}
+
+.conteiner ion-icon {
+    margin-right: 0.2rem;
+    position: relative;
+    top: 0.2rem;
+}
+
+.remember-me,
+input[type="checkbox"] {
+    margin-right: 0.2rem;
+    position: relative;
+    top: 0.07rem;
+}
+
+.remember-me a {
+    position: relative;
+    left: 102px; /* Ajusta este valor para mover el enlace hacia la derecha */
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.remember-me a:hover {
+    text-decoration: underline;
+    color: #1e92e9;
+    font-weight: 400;
+}
+
+
+.register a {
+    position: relative;
+    left: 183px; /* Ajusta este valor para mover el botón hacia la derecha */
+    cursor: pointer;
+    text-decoration: none;
+    color: #f1f1f1;
+}
+
+.register a:hover {
+    text-decoration: underline;
+    color: #1e92e9;
+    font-weight: 400;
+}
+
+
+
+button {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 10px;
+    font-size: medium;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #cdedfa;
+    font-size: medium;
+}
+
+label + input {
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+.boton-envia {
+    text-align: center; /* Centrar el contenido dentro del contenedor */
+    margin-top: 20px; /* Añadir espacio en la parte superior si lo necesitas */
+}
+
+.boton-envia input[type="submit"] {
+    width: 100%; /* Para asegurarse de que ocupe todo el ancho */
+    padding: 10px; /* Ajustar el padding para hacerlo más visible */
+    background-color: #1e92e9; /* Cambiar el color del botón */
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton-envia input[type="submit"]:hover {
+    background-color: #1c7cc0; /* Efecto hover */
+}
