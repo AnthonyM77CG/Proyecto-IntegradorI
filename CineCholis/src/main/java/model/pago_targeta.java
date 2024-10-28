@@ -1,4 +1,4 @@
-package Metodos;
+package model;
 
 public class pago_targeta {
     private String cardNumber;

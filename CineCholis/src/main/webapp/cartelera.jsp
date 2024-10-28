@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="Metodos.metCine"%>
-<%@ page import="Metodos.Pelicula"%>
-<%@ page import="Metodos.metPeliculas"%>
-<%@ page import="Metodos.metPeliculasCines"%>
+<%@ page import="dao.CineDAOimpl"%>
+<%@ page import="model.Pelicula"%>
+<%@ page import="dao.PeliculaDAOimpl"%>
+<%@ page import="dao.PeliculasCinesDAOimpl"%>
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.ArrayList"%>
 
@@ -108,13 +108,13 @@
 							<select class="styled-select" name="cineSeleccionado" id="cineSeleccionado">
 								<option value="">Todos los cines</option>
 								<%
-								metCine cineManager = new metCine();
-								List<String> cines = cineManager.obtenerCines();
-								String cineSeleccionado = request.getParameter("cineSeleccionado");
-								for (String cine : cines) {
-									String[] cineData = cine.split(",");
-									String cineId = cineData[0];
-									String cineNombre = cineData[1];
+								CineDAOimpl cineManager = new CineDAOimpl();
+																																List<String> cines = cineManager.obtenerCines();
+																																String cineSeleccionado = request.getParameter("cineSeleccionado");
+																																for (String cine : cines) {
+																																	String[] cineData = cine.split(",");
+																																	String cineId = cineData[0];
+																																	String cineNombre = cineData[1];
 								%>
 								<option value="<%=cineId%>" <%=cineSeleccionado != null && cineSeleccionado.equals(cineId) ? "selected" : ""%>><%=cineNombre%></option>
 								<%
@@ -128,10 +128,10 @@
 							<select class="styled-select" name="generoSeleccionado" id="generoSeleccionado">
 								<option value="">Todos los géneros</option>
 								<%
-								metPeliculas peliculaManager = new metPeliculas();
-								List<String> generos = peliculaManager.obtenerGeneros();
-								String generoSeleccionado = request.getParameter("generoSeleccionado");
-								for (String genero : generos) {
+								PeliculaDAOimpl peliculaManager = new PeliculaDAOimpl();
+																										List<String> generos = peliculaManager.obtenerGeneros();
+																										String generoSeleccionado = request.getParameter("generoSeleccionado");
+																										for (String genero : generos) {
 								%>
 								<option value="<%=genero%>" <%=generoSeleccionado != null && generoSeleccionado.equals(genero) ? "selected" : ""%>><%=genero%></option>
 								<%
@@ -151,21 +151,21 @@
 					<!-- Las películas filtradas se cargarán aquí -->
 					<%
 					cineSeleccionado = request.getParameter("cineSeleccionado");
-					generoSeleccionado = request.getParameter("generoSeleccionado");
-					metPeliculasCines relacionManager = new metPeliculasCines();
-					List<Pelicula> peliculas = new ArrayList<>();
+											generoSeleccionado = request.getParameter("generoSeleccionado");
+											PeliculasCinesDAOimpl relacionManager = new PeliculasCinesDAOimpl();
+											List<Pelicula> peliculas = new ArrayList<>();
 
-					try {
-						if (cineSeleccionado != null && !cineSeleccionado.isEmpty()) {
-							int cineId = Integer.parseInt(cineSeleccionado);
-							peliculas = relacionManager.obtenerPeliculasPorCine(cineId);
-						} else if (generoSeleccionado != null && !generoSeleccionado.isEmpty()) {
-							peliculas = relacionManager.obtenerPeliculasPorGenero(generoSeleccionado);
-						} else {
-							peliculas = relacionManager.obtenerTodasLasPeliculas();
-						}
+											try {
+												if (cineSeleccionado != null && !cineSeleccionado.isEmpty()) {
+													int cineId = Integer.parseInt(cineSeleccionado);
+													peliculas = relacionManager.obtenerPeliculasPorCine(cineId);
+												} else if (generoSeleccionado != null && !generoSeleccionado.isEmpty()) {
+													peliculas = relacionManager.obtenerPeliculasPorGenero(generoSeleccionado);
+												} else {
+													peliculas = relacionManager.obtenerTodasLasPeliculas();
+												}
 
-						if (peliculas.isEmpty()) {
+												if (peliculas.isEmpty()) {
 					%>
 					<p>No hay películas disponibles para la selección actual.</p>
 					<%
@@ -200,4 +200,5 @@
 	
 </body>
 </html>
-			
+
+

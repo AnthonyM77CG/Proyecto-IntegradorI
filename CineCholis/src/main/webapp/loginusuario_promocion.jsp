@@ -56,7 +56,7 @@
                 
                 <!-- Enlace para Registrarse -->
                 <div class="register">
-                    <p>¿No tienes una cuenta? <a href="registerant.jsp">Regístrate</a></p>
+                    <p>¿No tienes una cuenta? <a href="registerant_promociones.jsp">Regístrate</a></p>
                 </div>
             </fieldset>
         </form>

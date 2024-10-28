@@ -1,13 +1,13 @@
-package Metodos;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import Conexion.conexion;
+import config.conexion;
 import encrypt.Cifrado;
 
-public class met_pago {
+public class PagoDAOimpl {
 
     public void procesarPago(String cardNumber, String expiryDate, String cvv, String fullName, String email) throws SQLException {
         Cifrado cifrado = new Cifrado();

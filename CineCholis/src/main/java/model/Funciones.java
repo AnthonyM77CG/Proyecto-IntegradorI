@@ -1,4 +1,4 @@
-package Metodos;
+package model;
 
 public class Funciones {
     private int id;

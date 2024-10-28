@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="Metodos.metPeliculasCines" %>
-<%@ page import="Metodos.Sala" %>
+<%@ page import="dao.PeliculasCinesDAOimpl" %>
+<%@ page import="model.Sala" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 
-<% 
-    // Crear una instancia de metPeliculasCines
-    metPeliculasCines metodos = new metPeliculasCines();
+<%
+// Crear una instancia de metPeliculasCines
+    PeliculasCinesDAOimpl metodos = new PeliculasCinesDAOimpl();
     
     String nombreCine = request.getParameter("cine");
     List<Sala> listaSalas = new ArrayList<>();

@@ -1,5 +1,5 @@
-<%@ page import="Metodos.met_registro" %>
-<%@ page import="Metodos.DNIService" %>
+<%@ page import="dao.met_registro" %>
+<%@ page import="service.DNIService" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.io.PrintWriter" %>
 <!DOCTYPE html>
@@ -79,7 +79,7 @@
         %>
 
         <div class="resultado">
-            <form action="logicajsp/logicaregistro.jsp" method="post">
+            <form action="logicajsp/logicaregistro_intranet.jsp" method="post">
                 <div class="form-row">
                     <div class="form-group">
                         <input type="text" id="nombre" name="nombre" placeholder="Nombre" required value="<%= request.getAttribute("nombre") != null ? request.getAttribute("nombre") : "" %>" readonly>

@@ -1,12 +1,11 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.io.*" %>
-<%@ page import="Conexion.conexion" %>
+<%@ page import="config.conexion" %>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>CRUD de Películas</title>
+    <title>CRUD de Peliculas</title>
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/crudpeliculas.css">
     
@@ -24,12 +23,12 @@
 </head>
 <body>
     <jsp:include page="/fragmentos/encabezado_admin.jsp" />
-    <h1>Gestión de Películas</h1>
+    <h1>Gestiï¿½n de Pelï¿½culas</h1>
 
-    <h2>Agregar o Editar Película</h2>
+    <h2>Agregar o Editar Pelicula</h2>
     <form action="crudPeliculas.jsp" method="post">
         <input type="hidden" id="id" name="id" value="">
-        <label for="nombre_pelicula">Nombre de la Película:</label>
+        <label for="nombre_pelicula">Nombre de la Pelicula:</label>
         <input type="text" id="nombre_pelicula" name="nombre_pelicula" required><br>
 
         <label for="sinopsis">Sinopsis:</label>
@@ -41,7 +40,7 @@
         <label for="idioma">Idioma:</label>
         <input type="text" id="idioma" name="idioma" required><br>
 
-        <label for="genero">Género:</label>
+        <label for="genero">Genero:</label>
         <input type="text" id="genero" name="genero" required><br>
 
         <label for="imagen">Ruta de Imagen:</label>
@@ -56,13 +55,13 @@
         ResultSet rs = null;
 
         try {
-            // Conexión a la base de datos
+            // Conexiï¿½n a la base de datos
             conn = conexion.getConnection();
             if (conn == null) {
                 out.println("<script>alert('Error: No se pudo conectar a la base de datos.');</script>");
             }
 
-            // Insertar nueva película o actualizar existente
+            // Insertar nueva pelï¿½cula o actualizar existente
             if ("save".equals(request.getParameter("action"))) {
                 try {
                     String nombre_pelicula = request.getParameter("nombre_pelicula");
@@ -74,7 +73,7 @@
                     String idParam = request.getParameter("id");
 
                     if (idParam == null || idParam.isEmpty()) {
-                        // Inserción en la base de datos
+                        // Inserciï¿½n en la base de datos
                         String sqlInsert = "INSERT INTO pelicula (nombre_pelicula, sinopsis, director, idioma, imagen, genero) VALUES (?, ?, ?, ?, ?, ?)";
                         ps = conn.prepareStatement(sqlInsert);
                         ps.setString(1, nombre_pelicula);
@@ -86,12 +85,12 @@
 
                         int rowsInserted = ps.executeUpdate();
                         if (rowsInserted > 0) {
-                            out.println("<script>alert('Película agregada exitosamente.');</script>");
+                            out.println("<script>alert('Pelï¿½cula agregada exitosamente.');</script>");
                         } else {
-                            out.println("<script>alert('Error: No se pudo agregar la película.');</script>");
+                            out.println("<script>alert('Error: No se pudo agregar la pelï¿½cula.');</script>");
                         }
                     } else {
-                        // Actualización de la película existente
+                        // Actualizaciï¿½n de la pelï¿½cula existente
                         int id = Integer.parseInt(idParam);
                         String sqlUpdate = "UPDATE pelicula SET nombre_pelicula = ?, sinopsis = ?, director = ?, idioma = ?, imagen = ?, genero = ? WHERE id = ?";
                         ps = conn.prepareStatement(sqlUpdate);
@@ -105,22 +104,22 @@
 
                         int rowsUpdated = ps.executeUpdate();
                         if (rowsUpdated > 0) {
-                            out.println("<script>alert('Película actualizada exitosamente.');</script>");
+                            out.println("<script>alert('Pelicula actualizada exitosamente.');</script>");
                         } else {
-                            out.println("<script>alert('Error: No se pudo actualizar la película.');</script>");
+                            out.println("<script>alert('Error: No se pudo actualizar la pelï¿½cula.');</script>");
                         }
                     }
                 } catch (SQLException e) {
-                    out.println("<script>alert('Error al guardar la película: " + e.getMessage() + "');</script>");
+                    out.println("<script>alert('Error al guardar la pelï¿½cula: " + e.getMessage() + "');</script>");
                     e.printStackTrace();
                 }
             }
 
-            // Eliminar película
-            // Eliminar película
+            // Eliminar pelï¿½cula
+            // Eliminar pelï¿½cula
 			if ("Eliminar".equals(request.getParameter("actionDelete"))) {
 			    try {
-			        // Asegúrate de que el parámetro id se esté pasando correctamente
+			        // Asegï¿½rate de que el parï¿½metro id se estï¿½ pasando correctamente
 			        int id = Integer.parseInt(request.getParameter("id"));
 			        
 			        // Consulta SQL para eliminar
@@ -128,31 +127,31 @@
 			        ps = conn.prepareStatement(sqlDelete);
 			        ps.setInt(1, id);
 			        
-			        // Ejecutar la eliminación
+			        // Ejecutar la eliminaciï¿½n
 			        int rowsDeleted = ps.executeUpdate();
 			        
-			        // Verificar si se eliminó correctamente
+			        // Verificar si se eliminï¿½ correctamente
 			        if (rowsDeleted > 0) {
-			            out.println("<script>alert('Película eliminada exitosamente.');</script>");
+			            out.println("<script>alert('Pelï¿½cula eliminada exitosamente.');</script>");
 			        } else {
-			            out.println("<script>alert('Error: No se pudo eliminar la película.');</script>");
+			            out.println("<script>alert('Error: No se pudo eliminar la pelï¿½cula.');</script>");
 			        }
 			    } catch (SQLException e) {
-			        out.println("<script>alert('Error al eliminar la película: " + e.getMessage() + "');</script>");
+			        out.println("<script>alert('Error al eliminar la pelï¿½cula: " + e.getMessage() + "');</script>");
 			        e.printStackTrace();
 			    } catch (NumberFormatException e) {
-			        out.println("<script>alert('Error en el ID de la película: " + e.getMessage() + "');</script>");
+			        out.println("<script>alert('Error en el ID de la pelï¿½cula: " + e.getMessage() + "');</script>");
 			        e.printStackTrace();
 			    }
 			}
 
-            // Listar películas
+            // Listar pelï¿½culas
             try {
                 String sqlSelect = "SELECT * FROM pelicula";
                 ps = conn.prepareStatement(sqlSelect);
                 rs = ps.executeQuery();
     %>
-    <h2>Listado de Películas</h2>
+    <h2>Listado de Pelï¿½culas</h2>
     <table border="1">
         <tr>
             <th>ID</th>
@@ -161,7 +160,7 @@
             <th>Director</th>
             <th>Idioma</th>
             <th>Imagen</th>
-            <th>Género</th>
+            <th>Gï¿½nero</th>
             <th>Ruta de Imagen</th>
             <th>Acciones</th>
         </tr>
@@ -193,7 +192,7 @@
             <form action="crudPeliculas.jsp" method="post" style="display:inline;">
         <input type="hidden" name="id" value="<%= id %>">
         <input type="submit" name="actionDelete" value="Eliminar" 
-               onclick="return confirm('¿Está seguro de que desea eliminar esta película?');">
+               onclick="return confirm('ï¿½Estï¿½ seguro de que desea eliminar esta pelï¿½cula?');">
     </form>
 
             <form action="crudPeliculas.jsp" method="post" style="display:inline;">
@@ -208,11 +207,11 @@
     </table>
     <%
             } catch (SQLException e) {
-                out.println("<script>alert('Error al listar las películas: " + e.getMessage() + "');</script>");
+                out.println("<script>alert('Error al listar las pelï¿½culas: " + e.getMessage() + "');</script>");
                 e.printStackTrace();
             }
         } catch (SQLException e) {
-            out.println("<script>alert('Error de conexión: " + e.getMessage() + "');</script>");
+            out.println("<script>alert('Error de conexiï¿½n: " + e.getMessage() + "');</script>");
             e.printStackTrace();
         } finally {
             if (rs != null) try { rs.close(); } catch (SQLException e) { }
@@ -222,4 +221,9 @@
     %>
 </body>
 </html>
+
+
+
+
+
 

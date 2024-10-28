@@ -1,13 +1,14 @@
-package Metodos;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import Conexion.conexion;
+import config.conexion;
+import model.Asiento;
 
-public class metAsientos {
+public class AsientosDAOimpl {
 
     // Método para obtener los asientos por sala
     public ArrayList<Asiento> obtenerAsientosPorSala(int salaId) {

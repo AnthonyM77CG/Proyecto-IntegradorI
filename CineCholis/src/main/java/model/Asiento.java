@@ -1,4 +1,4 @@
-package Metodos;
+package model;
 
 public class Asiento {
     private String fila;

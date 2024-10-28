@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
-<%@ page import="Metodos.Met_login" %>
+<%@ page import="dao.Met_login" %>
 
 <%
     // Código de lógica de autenticación
@@ -16,7 +16,7 @@
                 response.sendRedirect("crudPeliculas.jsp");
                 return;
             } else if (rol.equals("usuario")) {
-                response.sendRedirect("cartelera.jsp");
+                response.sendRedirect("promociones_intranet.jsp");
                 return;
             }
         } else {

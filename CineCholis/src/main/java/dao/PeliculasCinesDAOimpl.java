@@ -1,6 +1,5 @@
-package Metodos;
+package dao;
 
-import Conexion.conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,7 +7,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class metPeliculasCines {
+import config.conexion;
+import model.Cines;
+import model.Pelicula;
+import model.Sala;
+
+public class PeliculasCinesDAOimpl implements PeliculaCineDAO {
     
     // Método para obtener películas por ID de cine
     public List<Pelicula> obtenerPeliculasPorCine(int cineId) {

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="Metodos.Pelicula" %>
-<%@ page import="Metodos.Cines" %>
-<%@ page import="Metodos.metPeliculasCines" %>
+<%@ page import="model.Pelicula" %>
+<%@ page import="model.Cines" %>
+<%@ page import="dao.PeliculasCinesDAOimpl" %>
 <%@ page import="java.util.List" %>
 
 <!DOCTYPE html>
@@ -63,11 +63,11 @@
             <div id="details-content">
                 <div id="vertical-image-container">
                     <%
-                        // Obtener detalles de "El Padrino"
-                        metPeliculasCines metodos = new metPeliculasCines();
-                        Pelicula pelicula = metodos.getPeliculaPorNombre("El Padrino");
-                        
-                        String imagenPelicula = (pelicula != null) ? pelicula.getImagen() : "default.jpg"; // Imagen por defecto
+                    // Obtener detalles de "El Padrino"
+                                                                PeliculasCinesDAOimpl metodos = new PeliculasCinesDAOimpl();
+                                                                Pelicula pelicula = metodos.getPeliculaPorNombre("El Padrino");
+                                                                
+                                                                String imagenPelicula = (pelicula != null) ? pelicula.getImagen() : "default.jpg"; // Imagen por defecto
                     %>
                     <img src="img/<%= imagenPelicula %>" alt="Imagen de la Película Detalle" id="vertical-image">
                 </div>
@@ -182,4 +182,8 @@
     
 </body>
 </html>
+
+
+
+
 

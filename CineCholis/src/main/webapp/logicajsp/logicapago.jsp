@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
-<%@ page import="Conexion.conexion" %>
-<%@ page import="Metodos.Cifrado" %>
+<%@ page import="config.conexion" %>
+<%@ page import="dao.Cifrado" %>
 <%@ page import="java.net.URLEncoder" %>
 
 <%

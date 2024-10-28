@@ -1,4 +1,4 @@
-package Metodos;
+package dao;
 	
 public class DescuentoUtil {
 	// Método para obtener el porcentaje de descuento según el tipo de promoción

@@ -49,6 +49,36 @@
     <title>Reserva de Entradas</title>
     <link rel="stylesheet" type="text/css" href="css/seleccionentrad.css">
     <script src="js/selectbutacas.js" defer></script>
+    
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const btnCanje = document.querySelector('.btn-canje');
+    const inputCodigo = document.getElementById('codigo');
+    const precioGeneralInput = document.querySelector('input[name="precioGeneral"]');
+    
+    const precioGeneralLabel = document.querySelector('.entradas-generales .entrada-item strong');
+
+    btnCanje.addEventListener('click', function() {
+        const codigo = inputCodigo.value.trim();
+        
+        // Regex para validar el código de descuento para estudiantes (2 letras, 1 número, 2 letras)
+        const regexEstudiante = /^[A-Za-z]{2}\d[A-Za-z]{2}$/;
+
+        if (regexEstudiante.test(codigo)) {
+            // Si el código es válido, reducir el precio
+            precioGeneralInput.value = "10.00"; // Cambia el precio a 10
+            precioGeneralLabel.textContent = "S/10.00"; // Actualiza el texto en el label
+            alert('Código canjeado correctamente. Precio de entradas generales reducido a S/10.00.');
+        } else {
+            alert('Código inválido. Asegúrate de ingresar bien el codigo');
+        }
+    });
+});
+</script>
+
+
+
+    
     <script>
     document.addEventListener("DOMContentLoaded", function() {
         const selectedSeats = new URLSearchParams(window.location.search).get('asientos');

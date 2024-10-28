@@ -1,4 +1,4 @@
-package Metodos;
+package dao;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

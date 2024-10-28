@@ -1,11 +1,13 @@
-package Metodos;
-import Conexion.conexion;
+package dao;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import config.conexion;
+import model.Pelicula;
 
 public class Comboboxdulceria {
 

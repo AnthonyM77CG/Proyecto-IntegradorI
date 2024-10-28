@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="Metodos.metCine" %>
+<%@ page import="dao.CineDAOimpl" %>
 <%@ page import="java.util.List" %>
 
 <%
-    String ciudad = request.getParameter("ciudad");
+String ciudad = request.getParameter("ciudad");
 
     // Crear instancia de metCine
-    metCine metodos = new metCine();
+    CineDAOimpl metodos = new CineDAOimpl();
 
     // Obtener la lista de cines por ciudad usando metCine
     List<String> cines = metodos.getCinesPorCiudad(ciudad);

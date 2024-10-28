@@ -7,6 +7,12 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
+	<properties>
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
+		<java.version>21</java.version>
+	</properties>
+
 	<dependencies>
 		<!-- Dependencia para commons-fileupload -->
 		<dependency>
@@ -18,18 +24,22 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>4.0.1</version>
+			<version>4.0.1</version> <!-- O la versión que estés usando -->
 			<scope>provided</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>2.16.0</version> 
+			<version>2.16.0</version>
+		</dependency>
+		<dependency>
+   			<groupId>mysql</groupId>
+   			<artifactId>mysql-connector-java</artifactId>
+  		    <version>8.0.30</version> 
 		</dependency>
 	</dependencies>
-	
+
 	<build>
-		
+
 	</build>
 </project>

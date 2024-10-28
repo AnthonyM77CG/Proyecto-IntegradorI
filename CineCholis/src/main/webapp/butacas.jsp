@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="dao.AsientosDAOimpl" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="Metodos.metAsientos" %>
-<%@ page import="Metodos.Asiento" %>
+<%@ page import="model.Asiento" %>
 <%
-    String cine = request.getParameter("cine");
+String cine = request.getParameter("cine");
     String horario = request.getParameter("horario");
     String fecha = request.getParameter("fecha");
     String pelicula = request.getParameter("pelicula");
@@ -24,7 +24,7 @@
     int salaId = Integer.parseInt(salaIdStr); // Convertir el ID de la sala a entero
 
     // Obtener los asientos desde la base de datos
-    metAsientos metodos = new metAsientos();
+    AsientosDAOimpl metodos = new AsientosDAOimpl();
     ArrayList<Asiento> asientos = metodos.obtenerAsientosPorSala(salaId);
 %>
 

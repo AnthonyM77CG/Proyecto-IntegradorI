@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="Metodos.Pelicula"%>
-<%@ page import="Metodos.metPeliculasCines"%>
+<%@ page import="model.Pelicula"%>
+<%@ page import="dao.PeliculasCinesDAOimpl"%>
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.ArrayList"%>
 
 <%
 String cineSeleccionado = request.getParameter("cineSeleccionado");
 String generoSeleccionado = request.getParameter("generoSeleccionado");
-metPeliculasCines relacionManager = new metPeliculasCines();
+PeliculasCinesDAOimpl relacionManager = new PeliculasCinesDAOimpl();
 List<Pelicula> peliculas = new ArrayList<>();
 
 try {

@@ -1,4 +1,4 @@
-package Metodos;
+package model;
 
 public class Ciudades {
     private int id;

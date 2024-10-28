@@ -1,6 +1,5 @@
-package Metodos;
+package dao;
 
-import Conexion.conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,7 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class metPeliculas {
+import config.conexion;
+
+public class PeliculaDAOimpl implements PeliculaDAO{
 
     // Clase para representar una película
     public static class Pelicula {
@@ -87,14 +88,14 @@ public class metPeliculas {
     }
 
     // Método para obtener todas las películas
-    public List<Metodos.Pelicula> obtenerPeliculas() {
-        List<Metodos.Pelicula> peliculas = new ArrayList<>();
+    public List<model.Pelicula> obtenerPeliculas() {
+        List<model.Pelicula> peliculas = new ArrayList<>();
         String query = "SELECT * FROM pelicula"; // Asegúrate de que la tabla se llame 'pelicula'
         try (Connection conn = conexion.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(query);
              ResultSet rs = pstmt.executeQuery()) {
             while (rs.next()) {
-                peliculas.add(new Metodos.Pelicula(
+                peliculas.add(new model.Pelicula(
                     rs.getInt("id"),
                     rs.getString("nombre_pelicula"),
                     rs.getString("sinopsis"),

@@ -45,7 +45,7 @@
                     <input type="submit" value="Ingresar">
                 </div>
                 <div class="register">
-                    <p>¿No tienes una cuenta?<a href="register.jsp">Registrate</a></p>
+                    <p>¿No tienes una cuenta?<a href="registerant_intranet.jsp">Registrate</a></p>
                 </div>
             </fieldset>
         </form>

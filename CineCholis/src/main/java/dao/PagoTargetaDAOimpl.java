@@ -1,11 +1,13 @@
-package Metodos;
+package dao;
 
-import Conexion.conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class metPagoTargeta {
+import config.conexion;
+import model.pago_targeta;
+
+public class PagoTargetaDAOimpl implements PagoTarjetaDAO {
     
     // Método para almacenar el pago de tarjeta
     public void almacenarPago(pago_targeta pago) throws SQLException { // Declarar que puede lanzar SQLException

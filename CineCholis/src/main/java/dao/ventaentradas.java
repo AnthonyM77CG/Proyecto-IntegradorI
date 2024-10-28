@@ -1,4 +1,4 @@
-package Metodos;
+package dao;
 
 import java.util.Date;
 

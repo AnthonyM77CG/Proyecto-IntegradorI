@@ -1,10 +1,11 @@
-package Metodos;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import Conexion.conexion;
+
+import config.conexion;
 
 public class Met_login {
 
