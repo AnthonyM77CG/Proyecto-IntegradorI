@@ -55,22 +55,38 @@ document.addEventListener("DOMContentLoaded", function() {
     const btnCanje = document.querySelector('.btn-canje');
     const inputCodigo = document.getElementById('codigo');
     const precioGeneralInput = document.querySelector('input[name="precioGeneral"]');
+    const precioMayoresInput = document.querySelector('input[name="precioMayores"]');
+    const precioNinosInput = document.querySelector('input[name="precioNinos"]')
     
     const precioGeneralLabel = document.querySelector('.entradas-generales .entrada-item strong');
+    const precioMayoresLabel = document.querySelector('.entradas-generales .mayores strong');
+    const precioNinosLabel = document.querySelector('.entradas-generales .ninos strong');
 
     btnCanje.addEventListener('click', function() {
         const codigo = inputCodigo.value.trim();
         
-        // Regex para validar el código de descuento para estudiantes (2 letras, 1 número, 2 letras)
+        /// Regex para los formatos de códigos
         const regexEstudiante = /^[A-Za-z]{2}\d[A-Za-z]{2}$/;
+        const regexMartes = /^\d{3}[A-Za-z]{2}$/;             // 3 números, 2 letras
+        const regexMayores = /^\d[A-Za-z]\d[A-Za-z]\d$/;   //numero, letra, numero, letra
 
         if (regexEstudiante.test(codigo)) {
-            // Si el código es válido, reducir el precio
-            precioGeneralInput.value = "10.00"; // Cambia el precio a 10
-            precioGeneralLabel.textContent = "S/10.00"; // Actualiza el texto en el label
-            alert('Código canjeado correctamente. Precio de entradas generales reducido a S/10.00.');
+            // Código para estudiantes
+            precioNinosInput.value = "10.00"; // Cambia el precio a 10
+            precioNinosLabel.textContent = "S/10.00"; // Actualiza el texto en el label
+            alert('Código para estudiantes canjeado correctamente. Precio reducido a S/10.00.');
+        } else if (regexMartes.test(codigo)) {
+            // Código para martes
+            precioGeneralInput.value = "8.00"; // Cambia el precio a 8
+            precioGeneralLabel.textContent = "S/8.00"; // Actualiza el texto en el label
+            alert('Código para promoción de martes canjeado correctamente. Precio reducido a S/8.00.');
+        } else if (regexMayores.test(codigo)) {
+            // Código para mayores
+            precioMayoresInput.value = "12.00"; // Cambia el precio a 12
+            precioMayoresLabel.textContent = "S/12.00"; // Actualiza el texto en el label
+            alert('Código para mayores canjeado correctamente. Precio reducido a S/12.00.');
         } else {
-            alert('Código inválido. Asegúrate de ingresar bien el codigo');
+            alert('Código inválido. Asegúrate de ingresarlo correctamente.');
         }
     });
 });
@@ -218,7 +234,7 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
         <input type="hidden" name="precioGeneral" value="23.00"> <!-- Precio general -->
     </div>
-    <div class="entrada-item">
+    <div class="entrada-item mayores">
         <label for="mayores">Mayores 60 años 2D OL</label>
         <span>Incluye servicio online. Precio más bajo</span>
         <strong>S/20.00</strong>
@@ -229,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
         <input type="hidden" name="precioMayores" value="20.00"> <!-- Precio mayores -->
     </div>
-    <div class="entrada-item">
+    <div class="entrada-item ninos">
         <label for="ninos">Niños 2D OL</label>
         <span>Para niños de 2 a 11 años. Incluye servicio online. Precio más bajo</span>
         <strong>S/20.00</strong>

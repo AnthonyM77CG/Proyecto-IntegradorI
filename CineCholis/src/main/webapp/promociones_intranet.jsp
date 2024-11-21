@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Promociones CineCholis</title>
+<title>CineCholis</title>
 <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Lato:300,400,700,800,900|Montserrat:300,400,800,900|Montserrat-Medium:500">
 <link rel="stylesheet" type="text/css" href="css/index.css">

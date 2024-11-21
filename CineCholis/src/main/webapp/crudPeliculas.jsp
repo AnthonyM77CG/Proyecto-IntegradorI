@@ -132,7 +132,7 @@
 			        
 			        // Verificar si se elimin� correctamente
 			        if (rowsDeleted > 0) {
-			            out.println("<script>alert('Pel�cula eliminada exitosamente.');</script>");
+			            out.println("<script>alert('Pelecula eliminada exitosamente.');</script>");
 			        } else {
 			            out.println("<script>alert('Error: No se pudo eliminar la pel�cula.');</script>");
 			        }
@@ -151,7 +151,7 @@
                 ps = conn.prepareStatement(sqlSelect);
                 rs = ps.executeQuery();
     %>
-    <h2>Listado de Pel�culas</h2>
+    <h2>Listado de Peliculas</h2>
     <table border="1">
         <tr>
             <th>ID</th>
