@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<title>CineCholis</title>
+<title>Cartelera</title>
 
 <script>
     // Función para redirigir según la película
@@ -90,7 +90,7 @@
 </script>
 </head>
 <body>
-	<jsp:include page="/fragmentos/encabezado.jsp" />
+	<jsp:include page="/fragmentos/encabezadousuario_intranet.jsp" />
 
 	<main>
 		<div class="cont-todo-cartelera">
@@ -200,5 +200,3 @@
 	
 </body>
 </html>
-
-

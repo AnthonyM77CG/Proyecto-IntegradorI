@@ -9,7 +9,8 @@
 <body>
 	<div class="banner" id="banner">
     <ul class="nav">
-        <li><a href="#">Cartelera</a></li>
+    	<li><a href="index_intranet.jsp">Inicio</a></li>
+        <li><a href="cartelera_intranet.jsp">Cartelera</a></li>
         <li><a href="#">Cines</a></li>
         <li><a href="promociones_intranet.jsp">Promociones</a></li>
         <li><a href="#">Socio</a></li>

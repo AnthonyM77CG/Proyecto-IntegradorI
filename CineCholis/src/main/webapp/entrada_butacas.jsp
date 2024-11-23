@@ -7,7 +7,7 @@
     if (usuario == null) {
         // Si no hay sesión, redirigir al inicio de sesión
         response.sendRedirect("loginusuario.jsp");
-        return; // Terminar la ejecución del JSP
+        return;
     }
 
     // Manejar el cierre de sesión

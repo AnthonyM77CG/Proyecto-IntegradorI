@@ -62,7 +62,7 @@ String cine = request.getParameter("cine");
         document.querySelector(".button-continue").addEventListener("click", function() {
             if (selectedSeats.length > 0) {
                 const numAsientos = selectedSeats.length;
-
+                
                 Swal.fire({
                     title: 'Iniciar sesión',
                     text: 'Estimado usuario, debe loguearse primero para continuar.',
