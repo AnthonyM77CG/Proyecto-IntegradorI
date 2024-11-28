@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Iniciar Sesión</title>
+    <title>CineCholis</title>
     <%@ include file="logicajsp/logicalogin.jsp" %>
     <link rel="stylesheet" type="text/css" href="css/formlogin.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
@@ -18,22 +18,16 @@
         <form class="form-login" action="loginusuario.jsp" method="POST">
             <fieldset>
                 <h3>Iniciar Sesión</h3>
-                
-                <!-- Campo del Usuario -->
                 <div class="conteiner">
                     <i class="fas fa-envelope"></i>
                     <label for="usuario">Usuario:</label>
                     <input type="text" id="usuario" name="email" required>
                 </div>
-                
-                <!-- Campo de la Contraseña -->
                 <div class="conteiner">
                     <i class="fas fa-lock"></i>
                     <label for="contraseña">Contraseña:</label>
                     <input type="password" id="contraseña" name="pass" required>
                 </div>
-                
-                <!-- Mostrar el mensaje de error si existe -->
                 <%
                     String error = (String) request.getAttribute("error");
                     if (error != null && !error.isEmpty()) {
@@ -42,8 +36,6 @@
                 <%
                     }
                 %>
-
-                <!-- Opción de Recordarme y Recuperar Contraseña -->
                 <div class="remember-me">
                     <label><input type="checkbox">Recordarme</label>
                     <a href="#">¿Has olvidado tu contraseña?</a>

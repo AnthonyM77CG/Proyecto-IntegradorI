@@ -3,24 +3,6 @@
 <!DOCTYPE html>
 
 <%
-// Comprobar si el usuario ha iniciado sesión
-String usuario = (String) session.getAttribute("usuario");
-if (usuario == null) {
-	// Si no hay sesión, redirigir al inicio de sesión
-	response.sendRedirect("loginusuario.jsp");
-	return;
-}
-
-// Manejar el cierre de sesión
-String logout = request.getParameter("logout");
-if (logout != null) {
-	// Invalidar la sesión
-	session.invalidate();
-	// Redirigir al inicio de sesión
-	response.sendRedirect("loginusuario.jsp");
-	return; // Terminar la ejecución del JSP
-}
-
 // Obtener detalles de la sesión o parámetros de la solicitud
 String pelicula = request.getParameter("pelicula");
 String fecha = request.getParameter("fecha");
@@ -215,15 +197,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				Butacas seleccionadas: <strong> <%=(asientos != null) ? asientos : "Ninguna"%>
 				</strong>
 			</p>
-			<div class="user-info">
-				<p>
-					Bienvenido, <strong><%=usuario%></strong>
-				</p>
-				<form id="logoutForm" action="loginusuario.jsp" method="get"
-					style="display: none;">
-					<input type="hidden" name="logout" value="true" />
-				</form>
-			</div>
+			<strong>Bienvenido: </strong><p id="usuarioDisplay"></p>
 		</div>
 
 		<!-- Panel Derecho -->
@@ -300,9 +274,7 @@ document.addEventListener("DOMContentLoaded", function() {
 						type="hidden" name="horario"
 						value="<%=horario != null ? horario : ""%>"> <input
 						type="hidden" name="sala"
-						value="<%=salaIdStr != null ? salaIdStr : ""%>"> <input
-						type="hidden" name="usuario"
-						value="<%=usuario != null ? usuario : ""%>"> <input
+						value="<%=salaIdStr != null ? salaIdStr : ""%>"><input
 						type="hidden" name="total" id="total" value="0">
 					<button type="submit" class="btn-confirmar">Confirmar
 						Reserva</button>
@@ -311,7 +283,19 @@ document.addEventListener("DOMContentLoaded", function() {
 		</div>
 	</div>
 
+	<script>
+		// Recuperar el valor almacenado en localStorage
+		const usuarioGuardado = localStorage.getItem("usuario");
 
+		// Verificar si el valor existe
+		if (usuarioGuardado) {
+		// Mostrar el valor en el elemento <p>
+		document.getElementById("usuarioDisplay").textContent = usuarioGuardado;
+		} else {
+		// Si no se encuentra, mostrar un mensaje predeterminado
+		document.getElementById("usuarioDisplay").textContent = "No se encontró el usuario.";
+		}
+</script>
 </body>
 </html>
 

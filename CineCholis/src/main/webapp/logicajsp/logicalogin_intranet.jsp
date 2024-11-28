@@ -16,7 +16,7 @@
                 response.sendRedirect("crudPeliculas.jsp");
                 return;
             } else if (rol.equals("usuario")) {
-                response.sendRedirect("promociones_intranet.jsp");
+                response.sendRedirect("index_intranet.jsp");
                 return;
             }
         } else {

@@ -50,5 +50,15 @@
             </fieldset>
         </form>
     </div>
+    <script>
+    // Función para guardar el valor del usuario al hacer submit
+    document.querySelector(".form-login").addEventListener("submit", function(event) {
+        // Capturamos el valor del input "usuario"
+        const usuario = document.getElementById("usuario").value;
+
+        // Guardamos el valor en localStorage
+        localStorage.setItem("usuario", usuario);
+    });
+</script>
 </body>
 </html>
