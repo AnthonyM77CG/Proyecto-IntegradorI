@@ -29,7 +29,7 @@ if (numAsientosParam != null && !numAsientosParam.isEmpty()) {
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Reserva de Entradas</title>
+<title>entrada_butacas_intranet</title>
 <link rel="stylesheet" type="text/css" href="css/seleccionentrad.css">
 <script src="js/selectbutacas.js" defer></script>
 
@@ -259,7 +259,7 @@ document.addEventListener("DOMContentLoaded", function() {
 						de <%=(asientos != null) ? asientos.split(",").length : 0%>
 					</strong>
 				</p>
-				<form id="form-reserva" action="Pasarela_pago.jsp" method="post">
+				<form id="form-reserva" action="Pasarela_pago_intranet.jsp" method="post">
 					<input type="hidden" name="asientos"
 						value="<%=asientos != null ? asientos : ""%>"> <input
 						type="hidden" name="numAsientos"

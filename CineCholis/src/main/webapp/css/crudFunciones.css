@@ -10,17 +10,16 @@ body {
 }
 
 h2 {
-    
     text-align: center;
     margin: 20px 0;
     color: #444;
 }
 
 /* Formulario */
-.formulario-pelicula {
-    width: 60%;
-    max-width: 55%;
-    margin: auto 250px;
+form {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto 30px;
     padding: 20px;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -28,22 +27,15 @@ h2 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-label{
+label {
+    display: block;
     margin: 15px 0 5px;
     font-weight: bold;
     color: #555;
 }
 
-.label-pelicula {
-    display: block;
-    margin: 15px 0;
-    font-weight: bold;
-    color: #555;
-}
-
-.input-pelicula,
-textarea {
-    width: 96.9%;
+select {
+    width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -52,7 +44,7 @@ textarea {
     font-size: 14px;
 }
 
-.boton-submit {
+.button-guardar {
     display: block;
     width: 100%;
     padding: 10px;
@@ -65,48 +57,48 @@ textarea {
     transition: background-color 0.3s ease;
 }
 
-.boton-submit:hover {
+.button-guardar:hover {
     background-color: #218838;
 }
 
 /* Tabla */
-.tabla-peliculas {
-    width: 100%;
-    max-width: 95%;
+table.funciones-table {
+    width: 90%;
+    max-width: 1000px;
     margin: 0 auto 30px;
     border-collapse: collapse;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.tabla-peliculas th,
-.tabla-peliculas td {
+table.funciones-table th,
+table.funciones-table td {
     text-align: center;
     padding: 10px;
     border: 1px solid #ddd;
     font-size: 14px;
 }
 
-.tabla-peliculas th {
+table.funciones-table th {
     background-color: #007bff;
     color: white;
     font-weight: bold;
 }
 
-.tabla-peliculas tr:nth-child(even) {
+table.funciones-table tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-.tabla-peliculas tr:hover {
+table.funciones-table tr:hover {
     background-color: #eaf1f8;
 }
 
-.tabla-peliculas td {
+table.funciones-table td {
     color: #555;
 }
 
 /* Encabezado */
-.encabezado-admin {
+#encabezado {
     background-color: #007bff;
     color: white;
     padding: 15px;
@@ -116,16 +108,16 @@ textarea {
 
 /* Media Queries */
 @media screen and (max-width: 768px) {
-    .formulario-pelicula {
+    form {
         width: 95%;
     }
 
-    .tabla-peliculas {
+    table.funciones-table {
         width: 95%;
         font-size: 12px;
     }
 
-    .boton-submit {
+    button[type="submit"] {
         font-size: 14px;
     }
 }
