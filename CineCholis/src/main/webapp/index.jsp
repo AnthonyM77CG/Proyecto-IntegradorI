@@ -9,6 +9,7 @@
 <title>CineCholis</title>
 <link rel="stylesheet" type="text/css" href="css/principal.css">
 <link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="icon" type="image/png" href="img/favicon.png">
 <script src="js/carrusel.js" defer></script>
 </head>
 <body>

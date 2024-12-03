@@ -7,6 +7,7 @@
     <title>Contáctanos</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
     <!-- Estilos para el popup -->
     <style>
         #popup {

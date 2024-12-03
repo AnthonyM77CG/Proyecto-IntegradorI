@@ -17,6 +17,7 @@
     href="https://fonts.googleapis.com/css?family=Lato:300,400,700,800,900|Montserrat:300,400,800,900|Montserrat-Medium:500">
 <link rel="stylesheet" type="text/css" href="css/index.css">
 <link rel="stylesheet" href="css/promociones.css">
+<link rel="icon" type="image/png" href="img/favicon.png">
 </head>
 <body>
 

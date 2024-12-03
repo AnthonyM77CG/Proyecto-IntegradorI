@@ -3,8 +3,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Pasarela de Pago</title>
+<title>CineCholis</title>
 <link rel="stylesheet" type="text/css" href="css/pasarela_pagoo.css">
+<link rel="icon" type="image/png" href="img/favicon.png">
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const cardNumberInput = document.getElementById('card-number');

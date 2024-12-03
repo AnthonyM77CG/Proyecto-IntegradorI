@@ -9,6 +9,7 @@
     <title>Registro</title>
     <link rel="stylesheet" type="text/css" href="css/formregistro.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
     <script>
         function validarDNI() {
             const dniInput = document.getElementById("numero_documento").value;

@@ -8,9 +8,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Detalles intranet</title>
+<title>CineCholis</title>
 <link rel="stylesheet" type="text/css" href="css/index.css">
 <link rel="stylesheet" type="text/css" href="css/elpadrinoo.css">
+<link rel="icon" type="image/png" href="img/favicon.png">
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>

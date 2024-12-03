@@ -9,6 +9,7 @@
     <title>CRUD de Peliculas</title>
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/crudpeliculas.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
 
     <script>
         function cargarDatos(id, nombre, sinopsis, director, idioma, genero, imagen) {

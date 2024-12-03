@@ -32,8 +32,9 @@ String cine = request.getParameter("cine");
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Reserva de Butacas</title>
+    <title>CineCholis</title>
     <link rel="stylesheet" type="text/css" href="css/butacasframe.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 
     <script>

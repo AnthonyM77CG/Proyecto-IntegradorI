@@ -47,8 +47,9 @@ if (numAsientosParam != null && !numAsientosParam.isEmpty()) {
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Reserva de Entradas</title>
+<title>CineCholis</title>
 <link rel="stylesheet" type="text/css" href="css/seleccionentrad.css">
+<link rel="icon" type="image/png" href="img/favicon.png">
 <script src="js/selectbutacas.js" defer></script>
 
 <script>

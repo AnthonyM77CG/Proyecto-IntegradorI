@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/index.css">
 <link rel="stylesheet" type="text/css" href="css/crudFunciones.css">
+<link rel="icon" type="image/png" href="img/favicon.png">
 <title>CineCholis</title>
 <script>
 	function cargarCines() {

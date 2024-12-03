@@ -29,8 +29,9 @@ if (numAsientosParam != null && !numAsientosParam.isEmpty()) {
 <html>
 <head>
 <meta charset="UTF-8">
-<title>entrada_butacas_intranet</title>
+<title>CineCholis</title>
 <link rel="stylesheet" type="text/css" href="css/seleccionentrad.css">
+<link rel="icon" type="image/png" href="img/favicon.png">
 <script src="js/selectbutacas.js" defer></script>
 
 <script>
