@@ -15,7 +15,7 @@
         <li><a href="promociones_intranet.jsp">Promociones</a></li>
         <li><a href="#">Socio</a></li>
         <li><a href="#">Corporativo</a></li>
-        <li><a href="contactanos.jsp" class="icon-link"><img src="img/iconCliente.png" alt="Contactanos" class="nav-icon" /></a></li>
+        <li><a href="contactanos_intranet.jsp" class="icon-link"><img src="img/iconCliente.png" alt="Contactanos" class="nav-icon" /></a></li>
         <li><a href="loginusuario_intranet.jsp" class="icon-link"><img src="img/salida.png" alt="Iniciar sesión" class="nav-icon" /></a></li>
     </ul>
 </div>

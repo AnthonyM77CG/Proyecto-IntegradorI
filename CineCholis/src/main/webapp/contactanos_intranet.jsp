@@ -49,7 +49,7 @@
     </style>
 </head>
 <body>
-<jsp:include page="/fragmentos/encabezado.jsp" />
+<jsp:include page="/fragmentos/encabezadousuario_intranet.jsp" />
 
 <main>
     <div class="contenedor-contactanos">
@@ -94,6 +94,8 @@
     </div>
 </main>
 
+<jsp:include page="/fragmentos/footer.jsp" />
+
 <!-- Ventana emergente -->
 <div id="overlay"></div> <!-- Fondo oscuro -->
 <div id="popup">
@@ -101,8 +103,6 @@
     <p>Gracias por contactarnos, nos pondremos en contacto contigo pronto.</p>
     <button id="closePopup">Cerrar</button>
 </div>
-
-<jsp:include page="/fragmentos/footer.jsp" />
 
 <!-- Script para mostrar la ventana emergente si el formulario fue enviado -->
 <script>
