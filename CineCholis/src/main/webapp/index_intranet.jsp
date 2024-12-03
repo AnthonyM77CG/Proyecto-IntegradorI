@@ -77,8 +77,7 @@
 					for (Slide slide : slides) {
 					%>
 					<div class="carousel-slide">
-						<img src="<%=slide.getImagePath()%>"
-							alt="<%=slide.getTitle()%>" />
+						<img src="<%=slide.getImagePath()%>" alt="<%=slide.getTitle()%>" />
 						<div class="slide-content">
 							<h2><%=slide.getTitle()%></h2>
 							<p><%=slide.getDescription()%></p>
@@ -96,63 +95,43 @@
 		</div>
 
 
-		<div class="content">
 
-
-			<div class="section mision">
-				<img src="img/mision.jpg" alt="Misión" class="section-img" />
-				<div class="section-content">
-					<h2>Misión</h2>
-					<p><%=mision%></p>
-				</div>
-			</div>
-
-
-			<div class="section vision">
-				<div class="section-content">
-					<h2>Visión</h2>
-					<p><%=vision%></p>
-				</div>
-				<img src="img/vision.jpg" alt="Visión" class="section-img" />
-			</div>
-
-
-			<div class="section objetivos">
-				<img src="img/objetivo.jpg" alt="Objetivos" class="section-img" />
-				<div class="section-content">
-					<h2>Objetivos</h2>
-					<ul>
-						<%
-						for (String objetivo : objetivos) {
-						%>
-						<li><%=objetivo%></li>
-						<%
-						}
-						%>
-					</ul>
-				</div>
-			</div>
-
-
-			<div class="section valores">
-				<img src="img/valores.jpg" alt="Valores" class="section-img" />
-				<div class="section-content">
-					<h2>Valores</h2>
-					<ul>
-						<%
-						for (String valor : valores) {
-						%>
-						<li><%=valor%></li>
-						<%
-						}
-						%>
-					</ul>
-				</div>
-			</div>
-
-		</div>
 
 	</div>
+
+</body>
+</html>
+
+<div class="card-container">
+	<div class="card">
+		<img src="img/tarjeta.png" alt="Tarjeta Socio Cineplanet"
+			class="card-image">
+	</div>
+	<div class="info">
+		<h1>
+			Bienvenido<br>Sobrino CineCholis
+		</h1>
+		<p>
+			¿Estás listo para vivir la más grande experiencia y disfrutar los
+			mejores beneficios? <a href="#">CineCholis</a> es el programa que
+			esperabas.
+		</p>
+		<div class="buttons">
+			<a href="#" class="btn btn-red">Únete</a> <a href="#"
+				class="btn btn-outline">Ver más</a>
+		</div>
+	</div>
+</div>
+
+<jsp:include page="/fragmentos/footer.jsp" />
+
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>

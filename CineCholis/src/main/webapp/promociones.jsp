@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>CineCholis</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,800,900|Montserrat:300,400,800,900|Montserrat-Medium:500">
 <link rel="stylesheet" type="text/css" href="css/index.css">
 <link rel="stylesheet" href="css/promociones.css">
@@ -43,5 +43,7 @@
             <a href="loginusuario_promocion.jsp" class="btn">Conseguir entradas</a>
         </div>
     </div>
+    
+    <jsp:include page="/fragmentos/footer.jsp" />
 </body>
 </html>

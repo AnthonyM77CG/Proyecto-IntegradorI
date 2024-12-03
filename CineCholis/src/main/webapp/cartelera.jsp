@@ -148,9 +148,7 @@
 		</div>
 	</main>
 
-	<footer>
-		<!-- Contenido del pie de página -->
-	</footer>
+	<jsp:include page="/fragmentos/footer.jsp" />
 
 </body>
 </html>

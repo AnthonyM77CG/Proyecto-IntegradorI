@@ -78,6 +78,8 @@ body {
 
 
 
+
+
 /* este es para el fondo blanco a corde con el javasscript*/
 .banner.white-background {
     background: rgba(255, 255, 255, 0);
@@ -591,4 +593,3 @@ button.next {
     margin-left: 20px;
     order: 2;
 }
-

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*, java.util.*"%>
+<%@ page import="config.conexion"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,18 +34,12 @@
 	if ("POST".equalsIgnoreCase(request.getMethod()) && request.getParameter("pelicula") != null) {
 	    String id_pelicula = request.getParameter("pelicula");
 	    String id_cine = request.getParameter("cine");
-	    String[] horarios = request.getParameterValues("horarios[]"); // Recibir múltiples horarios
+	    String[] horarios = request.getParameterValues("horarios[]");
 	    
 	    if (id_pelicula != null && id_cine != null && horarios != null) {
-	        Connection conn = null;
-	        PreparedStatement ps = null;
-	        
-	        try {
-	            Class.forName("com.mysql.cj.jdbc.Driver");
-	            conn = DriverManager.getConnection("jdbc:mysql://localhost/cineproyect", "root", "");
-	            
+	        try (Connection conn = conexion.getConnection()) {
 	            String insertQuery = "INSERT INTO funciones (id_pelicula, id_cine, horario) VALUES (?, ?, ?)";
-	            ps = conn.prepareStatement(insertQuery);
+	            PreparedStatement ps = conn.prepareStatement(insertQuery);
 	            
 	            for (String horario : horarios) {
 	                ps.setInt(1, Integer.parseInt(id_pelicula));
@@ -52,12 +47,9 @@
 	                ps.setString(3, horario);
 	                ps.executeUpdate();
 	            }
-	            
 	            out.println("<script>alert('¡Función(es) guardada(s) exitosamente!');</script>");
 	        } catch (Exception e) {
-	            out.print("");
-	        } finally {
-	            if (conn != null) try { conn.close(); } catch (SQLException e) {}
+	            out.print("<script>alert('Error al guardar las funciones: " + e.getMessage() + "');</script>");
 	        }
 	    } else {
 	    	out.println("<script>alert('Por favor complete todos los campos.');</script>");
@@ -70,11 +62,7 @@
 		<label for="ciudad">Selecciona Ciudad:</label>
 		<select name="ciudad" id="ciudad" onchange="cargarCines()">
 			<%
-			// Cargar ciudades desde la base de datos
-			Connection conn = null;
-			try {
-				Class.forName("com.mysql.cj.jdbc.Driver");
-				conn = DriverManager.getConnection("jdbc:mysql://localhost/cineproyect", "root", "");
+			try (Connection conn = conexion.getConnection()) {
 				PreparedStatement ps = conn.prepareStatement("SELECT id, nombre_ciudad FROM ciudades");
 				ResultSet rs = ps.executeQuery();
 				while (rs.next()) {
@@ -84,8 +72,6 @@
 				}
 			} catch (Exception e) {
 				out.println("Error: " + e.getMessage());
-			} finally {
-				if (conn != null) try { conn.close(); } catch (SQLException e) {}
 			}
 			%>
 		</select>
@@ -93,8 +79,7 @@
 		<label for="pelicula">Selecciona Película:</label>
 		<select name="pelicula" id="pelicula">
 			<%
-			try {
-				conn = DriverManager.getConnection("jdbc:mysql://localhost/cineproyect", "root", "");
+			try (Connection conn = conexion.getConnection()) {
 				PreparedStatement ps = conn.prepareStatement("SELECT id, nombre_pelicula FROM pelicula");
 				ResultSet rs = ps.executeQuery();
 				while (rs.next()) {
@@ -104,8 +89,6 @@
 				}
 			} catch (Exception e) {
 				out.println("Error: " + e.getMessage());
-			} finally {
-				if (conn != null) try { conn.close(); } catch (SQLException e) {}
 			}
 			%>
 		</select>
@@ -144,22 +127,18 @@
 		</thead>
 		<tbody>
 			<%
-			if (request.getParameter("accion") != null && request.getParameter("accion").equals("eliminar")) {
-				try {
+			if ("eliminar".equals(request.getParameter("accion"))) {
+				try (Connection conn = conexion.getConnection()) {
 					int idFuncion = Integer.parseInt(request.getParameter("idFuncion"));
-					conn = DriverManager.getConnection("jdbc:mysql://localhost/cineproyect", "root", "");
 					PreparedStatement ps = conn.prepareStatement("DELETE FROM funciones WHERE id = ?");
 					ps.setInt(1, idFuncion);
 					ps.executeUpdate();
 				} catch (Exception e) {
 					out.println("<tr><td colspan='5'>Error al eliminar: " + e.getMessage() + "</td></tr>");
-				} finally {
-					if (conn != null) try { conn.close(); } catch (SQLException e) {}
 				}
 			}
 
-			try {
-				conn = DriverManager.getConnection("jdbc:mysql://localhost/cineproyect", "root", "");
+			try (Connection conn = conexion.getConnection()) {
 				String query = "SELECT f.id, p.nombre_pelicula, c.nombre_cine, f.horario FROM funciones f " +
 				               "JOIN pelicula p ON f.id_pelicula = p.id " +
 				               "JOIN cines c ON f.id_cine = c.id";
@@ -185,8 +164,6 @@
 				}
 			} catch (Exception e) {
 				out.println("<tr><td colspan='5'>Error: " + e.getMessage() + "</td></tr>");
-			} finally {
-				if (conn != null) try { conn.close(); } catch (SQLException e) {}
 			}
 			%>
 		</tbody>

@@ -63,7 +63,9 @@
             </div>
         </div>
     </div>
-
+	
+	<jsp:include page="/fragmentos/footer.jsp" />
+	
     <script>
     function generarCodigoDescuento(elemento, tipoPromocion) {
         const parrafoCodigo = elemento.parentElement.querySelector('.codigo-descuento');
@@ -135,7 +137,7 @@
           .then(data => console.log(data));
     }
     </script>
-
+	
     
 </body>
 </html>
