@@ -3,10 +3,10 @@
 <%@ page import="java.sql.*, java.util.*"%>
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href="css/index.css">
-<link rel="stylesheet" type="text/css" href="css/crudFunciones.css">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="stylesheet" type="text/css" href="css/crudFunciones.css">
 <title>CineCholis</title>
 <script>
 	function cargarCines() {
@@ -23,27 +23,50 @@
 		}
 	}
 
-	function cargarSalas() {
-		var cineId = document.getElementById("cine").value;
-		if (cineId) {
-			var xhr = new XMLHttpRequest();
-			xhr.open("GET", "getSalas2.jsp?cine_id=" + cineId, true);
-			xhr.onload = function() {
-				if (xhr.status == 200) {
-					document.getElementById("sala").innerHTML = xhr.responseText;
-				}
-			};
-			xhr.send();
-		}
-	}
 </script>
 </head>
 <body>
 	<jsp:include page="/fragmentos/encabezado_admin.jsp" />
 	<h2>Gestión de Funciones</h2>
-
+	
+	<%
+	if ("POST".equalsIgnoreCase(request.getMethod()) && request.getParameter("pelicula") != null) {
+	    String id_pelicula = request.getParameter("pelicula");
+	    String id_cine = request.getParameter("cine");
+	    String[] horarios = request.getParameterValues("horarios[]"); // Recibir múltiples horarios
+	    
+	    if (id_pelicula != null && id_cine != null && horarios != null) {
+	        Connection conn = null;
+	        PreparedStatement ps = null;
+	        
+	        try {
+	            Class.forName("com.mysql.cj.jdbc.Driver");
+	            conn = DriverManager.getConnection("jdbc:mysql://localhost/cineproyect", "root", "");
+	            
+	            String insertQuery = "INSERT INTO funciones (id_pelicula, id_cine, horario) VALUES (?, ?, ?)";
+	            ps = conn.prepareStatement(insertQuery);
+	            
+	            for (String horario : horarios) {
+	                ps.setInt(1, Integer.parseInt(id_pelicula));
+	                ps.setInt(2, Integer.parseInt(id_cine));
+	                ps.setString(3, horario);
+	                ps.executeUpdate();
+	            }
+	            
+	            out.println("<script>alert('¡Función(es) guardada(s) exitosamente!');</script>");
+	        } catch (Exception e) {
+	            out.print("");
+	        } finally {
+	            if (conn != null) try { conn.close(); } catch (SQLException e) {}
+	        }
+	    } else {
+	    	out.println("<script>alert('Por favor complete todos los campos.');</script>");
+	    }
+	}
+	%>
+	
 	<!-- Formulario para agregar funciones -->
-	<form id="form-funcion" action="logicajsp/logicaFunciones.jsp" method="post">
+	<form id="form-funcion" class="form-funcion" method="post">
 		<label for="ciudad">Selecciona Ciudad:</label>
 		<select name="ciudad" id="ciudad" onchange="cargarCines()">
 			<%
@@ -90,11 +113,6 @@
 		<label for="cine">Selecciona Cine:</label>
 		<select name="cine" id="cine" onchange="cargarSalas()">
 			<option value="">Selecciona Ciudad primero</option>
-		</select>
-
-		<label for="sala">Selecciona Sala:</label>
-		<select name="sala" id="sala">
-			<option value="">Selecciona Cine primero</option>
 		</select>
 
 		<label for="horario">Selecciona Horario:</label>

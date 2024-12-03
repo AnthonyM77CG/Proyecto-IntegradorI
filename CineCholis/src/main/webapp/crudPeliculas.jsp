@@ -5,8 +5,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
     <title>CRUD de Peliculas</title>
-    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/crudpeliculas.css">
 
@@ -26,12 +26,10 @@
 </head>
 <body>
     <jsp:include page="/fragmentos/encabezado_admin.jsp" />
-    <h1>Gestión de Películas</h1>
 
-    <h2>Agregar o Editar Película</h2>
     <form action="crudPeliculas.jsp" method="post" class="formulario-pelicula">
         <input type="hidden" id="id" name="id" value="">
-        <label for="nombre_pelicula" class="label-pelicula">Nombre de la Película:</label>
+        <label for="nombre_pelicula" class="label-pelicula">Nombre de la Pelicula:</label>
         <input type="text" id="nombre_pelicula" name="nombre_pelicula" class="input-pelicula" required><br>
 
         <label for="sinopsis" class="label-pelicula">Sinopsis:</label>
@@ -43,7 +41,7 @@
         <label for="idioma" class="label-pelicula">Idioma:</label>
         <input type="text" id="idioma" name="idioma" class="input-pelicula" required><br>
 
-        <label for="genero" class="label-pelicula">Género:</label>
+        <label for="genero" class="label-pelicula">Genero:</label>
         <input type="text" id="genero" name="genero" class="input-pelicula" required><br>
 
         <label for="imagen" class="label-pelicula">Ruta de Imagen:</label>
@@ -87,9 +85,9 @@
 
                     int rowsInserted = ps.executeUpdate();
                     if (rowsInserted > 0) {
-                        out.println("<script>alert('Película agregada exitosamente.');</script>");
+                        out.println("<script>alert('Pelicula agregada exitosamente.');</script>");
                     } else {
-                        out.println("<script>alert('Error: No se pudo agregar la película.');</script>");
+                        out.println("<script>alert('Error: No se pudo agregar la pelicula.');</script>");
                     }
                 } else {
                     int id = Integer.parseInt(idParam);
@@ -105,13 +103,13 @@
 
                     int rowsUpdated = ps.executeUpdate();
                     if (rowsUpdated > 0) {
-                        out.println("<script>alert('Película actualizada exitosamente.');</script>");
+                        out.println("<script>alert('Pelicula actualizada exitosamente.');</script>");
                     } else {
-                        out.println("<script>alert('Error: No se pudo actualizar la película.');</script>");
+                        out.println("<script>alert('Error: No se pudo actualizar la pelicula.');</script>");
                     }
                 }
             } catch (SQLException e) {
-                out.println("<script>alert('Error al guardar la película: " + e.getMessage() + "');</script>");
+                out.println("<script>alert('Error al guardar la pelicula: " + e.getMessage() + "');</script>");
             }
         }
 
@@ -125,12 +123,12 @@
 
                 int rowsDeleted = ps.executeUpdate();
                 if (rowsDeleted > 0) {
-                    out.println("<script>alert('Película eliminada exitosamente.');</script>");
+                    out.println("<script>alert('Pelicula eliminada exitosamente.');</script>");
                 } else {
-                    out.println("<script>alert('Error: No se pudo eliminar la película.');</script>");
+                    out.println("<script>alert('Error: No se pudo eliminar la pelicula.');</script>");
                 }
             } catch (SQLException e) {
-                out.println("<script>alert('Error al eliminar la película: " + e.getMessage() + "');</script>");
+                out.println("<script>alert('Error al eliminar la pelicula: " + e.getMessage() + "');</script>");
             }
         }
 
@@ -139,7 +137,7 @@
         ps = conn.prepareStatement(sqlSelect);
         rs = ps.executeQuery();
     %>
-    <h2>Listado de Películas</h2>
+    <h2>Listado de Peliculas</h2>
     <table class="tabla-peliculas">
         <tr>
             <th>ID</th>
@@ -173,7 +171,7 @@
                 <button onclick="cargarDatos('<%= id %>', '<%= nombre %>', '<%= sinopsis %>', '<%= director %>', '<%= idioma %>', '<%= genero %>', '<%= imagen %>')">Editar</button>
                 <form action="crudPeliculas.jsp" method="post" style="display:inline;">
                     <input type="hidden" name="id" value="<%= id %>">
-                    <input type="submit" name="actionDelete" value="Eliminar" onclick="return confirm('¿Está seguro de eliminar esta película?');">
+                    <input type="submit" name="actionDelete" value="Eliminar" onclick="return confirm('¿Esta seguro de eliminar esta pelicula?');">
                 </form>
             </td>
         </tr>
